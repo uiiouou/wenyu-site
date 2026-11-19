@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>文语 · 中文学术文稿优化（封闭测试）</title>
+<meta name="description" content="文语是一款面向中文学术文稿的逐段改写工具：导入检测报告、逐段比较、人工审核、保留 Word 格式后导出。当前为封闭测试阶段。">
+<meta name="robots" content="index,follow">
+<link rel="stylesheet" href="assets/tokens.css">
+<link rel="stylesheet" href="assets/index.css?v=6ce04a94">
+<link rel="canonical" href="https://wenyutext.site/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="文语 · 中文学术文稿逐段改写（封闭测试）">
+<meta property="og:description" content="导入检测报告、逐段比较、人工审核、保留 Word 格式导出。当前为封闭测试，不提供上传与支付。">
+<meta property="og:url" content="https://wenyutext.site/">
+<meta property="og:image" content="https://wenyutext.site/assets/workspace.png">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html"><span class="brand-mark">文</span>文语</a>
+    <nav class="nav">
+      <a href="#features">功能</a><a href="#shots">界面</a><a href="#flow">流程</a><a href="#limits">限制</a><a href="privacy.html">隐私</a><a href="terms.html">协议</a>
+    </nav>
+    <span style="flex:1"></span>
+    <span class="tag beta" style="margin:0">封闭测试中</span>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap-narrow hero-grid">
+    <div>
+      <div class="kicker">中文学术文稿 · 逐段改写与审核</div>
+      <h1 class="display">不是一键改写，<br>而是<em>逐段可核对</em>的修改。</h1>
+      <p class="lead">文语读取你的检测报告、逐段比较改写建议、保留 Word 里的加粗与上标引用，导出前让你逐段确认。当前处于<strong>封闭测试</strong>，只对受邀用户开放上传与改写。</p>
+      <div class="status-note">
+        <strong>本页是展示版：</strong>不提供上传入口，也没有在线支付。真正可用的功能仅对受邀测试账户开放。
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:20px">
+        <a class="btn primary" href="#signup">报名参与测试</a>
+        <a class="btn" href="closed-test.html">封闭测试说明</a>
+      </div>
+    </div>
+    <aside class="hero-card">
+      <h2>当前真实能力（不是规划）</h2>
+      <ul>
+        <li><span class="dot"></span><span>导入文本层 PDF / TXT 检测报告，读出全篇与三区数值</span></li>
+        <li><span class="dot"></span><span>逐段生成单个改写候选，跑数字/引用/否定/术语保真检查</span></li>
+        <li><span class="dot"></span><span>行内差异视图，采纳 / 拒绝 / 逐句合成</span></li>
+        <li><span class="dot"></span><span>Word 导出：整段写、run 级映射、结构保护三层判定</span></li>
+        <li><span class="dot"></span><span>导出快照固定哈希，下载前校验完整性</span></li>
+      </ul>
+      <p style="margin-top:12px;font-size:12px;color:var(--faint)">以上能力已在隔离环境用合成文稿验收；未接真实支付与公网服务。</p>
+    </aside>
+  </div>
+</section>
+
+<section class="band" id="features">
+  <div class="wrap-narrow">
+    <h2 class="sec">核心功能</h2>
+    <p class="sub">每一项都标注了当前状态：<strong>可用</strong>＝已用合成数据验收；<strong>内测</strong>＝仅受邀账户；<strong>未开放</strong>＝尚未实现或未过验收。</p>
+    <div class="grid3">
+      <article class="card"><span class="tag ok">可用</span><h3>检测报告定位</h3><p>读取全篇数值与前部/中部/后部三区比例；区域标签不会被当成检测值，缺失就留空。报告版本与稿件不一致时不做定向。</p></article>
+      <article class="card"><span class="tag ok">可用</span><h3>逐段改写（单候选）</h3><p>一次只生成一个候选，附数字、引用、否定、术语与长度比检查。多候选批量生成<strong>未开放</strong>。</p></article>
+      <article class="card"><span class="tag ok">可用</span><h3>行内差异</h3><p>词级 LCS 对比原文与改文，删除与新增分开标注，不是整段并排。</p></article>
+      <article class="card"><span class="tag ok">可用</span><h3>人工审核</h3><p>采纳前需要确认事实、引用与术语；采纳不等于写入文件，导出才写。</p></article>
+      <article class="card"><span class="tag ok">可用</span><h3>Word 格式保护</h3><p>含公式、超链接、域、修订、宏的段落整段保留原文；加粗术语与上标引用走 run 级映射。</p></article>
+      <article class="card"><span class="tag ok">可用</span><h3>导出快照</h3><p>每次导出生成固定版本与哈希，下载前校验；同一原稿与同一决策导出结果逐字节一致。</p></article>
+      <article class="card"><span class="tag beta">内测</span><h3>账户与额度</h3><p>真实账户、会话、CSRF、跨用户隔离已有测试；额度按段落计。</p></article>
+      <article class="card"><span class="tag beta">内测</span><h3>第三方渠道订单</h3><p>只做订单模型与适配层（外部订单号、状态、幂等、退款、对账），<strong>未接真实平台交易</strong>。</p></article>
+      <article class="card"><span class="tag off">未开放</span><h3>在线支付 / 订阅 / 分销</h3><p>尚未开通，也没有任何收费入口。本页不提供付款方式。</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="band soft" id="shots">
+  <div class="wrap-narrow">
+    <h2 class="sec">产品界面</h2>
+    <p class="sub">以下截图来自隔离测试环境，文稿为<strong>完全虚构的合成文本</strong>，不含任何真实论文、检测报告或用户资料。</p>
+    <div class="shots">
+      <figure><img src="assets/workspace.png" alt="工作台：段落列表、报告条与落区徽标"><figcaption>工作台：报告三区优先级、段落生成/审核/写入三态、行内差异</figcaption></figure>
+      <figure><img src="assets/report.png" alt="检测报告页：三区数值与优先级"><figcaption>检测报告：全篇值、三区数值、优先级与依据</figcaption></figure>
+    </div>
+    <div style="margin-top:16px;max-width:420px"><figure><img src="assets/mobile.png" alt="移动端单段专注界面"><figcaption>移动端：一次只看一段，底部三段操作</figcaption></figure></div>
+  </div>
+</section>
+
+<section class="band" id="flow">
+  <div class="wrap-narrow">
+    <h2 class="sec">使用流程</h2>
+    <p class="sub">流程里没有"一键变好"这一步，每一步都要你确认。</p>
+    <ol class="flow">
+      <li>上传原稿<br><span style="color:var(--muted)">生成不可变版本，逐段判定能否安全改写</span></li>
+      <li>导入报告（可选）<br><span style="color:var(--muted)">读出三区数值，决定先改哪一段、改多狠</span></li>
+      <li>逐段审核<br><span style="color:var(--muted)">看差异、核对数字与引用，采纳或拒绝</span></li>
+      <li>导出快照<br><span style="color:var(--muted)">生成固定版本与哈希，逐段说明写入或保护</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="band soft" id="limits">
+  <div class="wrap-narrow">
+    <h2 class="sec">支持的格式与明确限制</h2>
+    <div class="two">
+      <div>
+        <table class="spec">
+          <tr><th>项目</th><th>当前支持</th></tr>
+          <tr><td>文稿</td><td>.docx（文字型）；不支持扫描件、宏、嵌入对象、外部资源</td></tr>
+          <tr><td>报告</td><td>文本层 PDF、UTF-8 TXT；不支持加密 PDF、扫描图片</td></tr>
+          <tr><td>单篇规模</td><td>≤ 100,000 字 · ≤ 2000 段 · 上传 ≤ 8MB</td></tr>
+          <tr><td>单段改写</td><td>20–3000 字；超长段落需先手动拆分</td></tr>
+          <tr><td>导出</td><td>Word（.docx）；复杂结构段落会保留原文并逐段说明</td></tr>
+          <tr><td>数据保留</td><td>默认 7 天，可随时删除；删除后内容与文件一并清除</td></tr>
+        </table>
+      </div>
+      <div>
+        <h3 style="font-size:16px;margin-bottom:10px">我们不做这些承诺</h3>
+        <ul class="list-check">
+          <li>不承诺降到某个百分比，也不承诺通过任何平台检测</li>
+          <li>不把内部特征分当成知网等平台的检测结果</li>
+          <li>不保证语义完全等价，规则检查不能代替你的判断</li>
+          <li>不替你做学术规范的判断，请遵守所在院校要求</li>
+          <li>不在未获授权时把你的文稿用于任何演示或案例</li>
+        </ul>
+        <div class="notice-inline" style="margin-top:14px">AI 生成内容标识：当前导出文件在元数据中记录"含经用户审核的 AI 修改建议"，正文声明为可选项。<strong>这不等于已完成《AI 生成合成内容标识办法》的合规</strong>，正在按外部要求补齐。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="signup">
+  <div class="wrap-narrow two">
+    <div>
+      <h2 class="sec">报名参与封闭测试</h2>
+      <p class="sub">测试名额有限，优先给"有真实稿件、愿意反馈问题"的人。测试期免费，功能可能随时回滚。</p>
+      <form class="signup" id="signup-form" novalidate>
+        <label>称呼<input name="name" maxlength="40" placeholder="怎么称呼你" required></label>
+        <label>联系方式<input name="contact" maxlength="120" placeholder="邮箱或微信（仅用于通知测试资格）" required></label>
+        <label>使用场景
+          <select name="scene">
+            <option value="thesis">学位论文 / 课程论文</option>
+            <option value="journal">期刊投稿</option>
+            <option value="other">其他中文学术写作</option>
+          </select>
+        </label>
+        <label>想解决的问题<textarea name="note" rows="3" maxlength="400" placeholder="例如：某几段被判比例高，但不想改掉术语"></textarea></label>
+        <button class="btn primary" type="submit">记录报名意向</button>
+        <p class="notice-inline" id="signup-note">本页是静态展示版：点击只会在<strong>你本机浏览器</strong>里记下草稿，不会发送到任何服务器。</p>
+      </form>
+    </div>
+    <div>
+      <h2 class="sec">服务限制与联系</h2>
+      <table class="spec">
+        <tr><th>项目</th><th>说明</th></tr>
+        <tr><td>开放范围</td><td>仅受邀测试账户；本页不提供注册与上传</td></tr>
+        <tr><td>收费</td><td>测试期免费；在线支付未开通</td></tr>
+        <tr><td>模型</td><td>仅将你选择的段落发送至第三方模型接口，不发送全文与报告</td></tr>
+        <tr><td>运营者</td><td>个人开发者（个人主体；网站备案办理中）</td></tr>
+        <tr><td>客服与投诉</td><td>1502697204@qq.com（投诉处理时限将在正式开放前确认并写明）</td></tr>
+        <tr><td>站点域名</td><td>wenyutext.site（备案完成后启用 HTTPS）</td></tr>
+      </table>
+      <p class="sub" style="margin-top:14px;font-size:12.5px">按当前计划，正式开放前需要完成：备案主体与网站备案、AI 相关登记确认、支付渠道准入核验、隐私与协议定稿。缺任何一项都不会开放上传入口。</p>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap-narrow">
+    <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:10px">
+      <a href="closed-test.html">封闭测试说明</a><a href="privacy.html">隐私与数据处理</a><a href="terms.html">服务协议</a><a href="#limits">服务限制</a><a href="#signup">测试报名</a>
+    </div>
+    <p>文语 · 中文学术文稿优化（封闭测试） · wenyutext.site。本站为展示版，不含真实论文上传入口，也不提供任何付费服务。</p>
+    <p>检测结论由第三方平台决定，本产品不承诺任何检测数值；请在遵守所在院校与期刊学术规范的前提下使用。</p>
+  </div>
+</footer>
+
+<script src="assets/index.js?v=cb733c94" defer></script>
+</body>
+</html>

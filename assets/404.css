@@ -1,0 +1,4 @@
+body{display:flex;min-height:100vh;align-items:center;justify-content:center;background:var(--background)}
+.box{max-width:520px;padding:40px 24px;text-align:left}.code{font:52px/1 var(--mono);color:var(--primary);letter-spacing:-2px}
+h1{font-family:var(--serif);font-size:28px;margin:18px 0 12px}p{color:var(--muted);line-height:1.9;font-size:15px}
+a.btn{display:inline-flex;height:42px;align-items:center;padding:0 18px;border:1px solid var(--border-strong);border-radius:8px;text-decoration:none;color:var(--ink);margin-top:18px}

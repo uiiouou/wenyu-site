@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>隐私与数据处理 · 文语（封闭测试）</title>
+<meta name="description" content="文语封闭测试阶段的数据处理说明：保存什么、发给谁、保留多久、怎么删除。">
+<link rel="stylesheet" href="assets/tokens.css">
+<link rel="stylesheet" href="assets/privacy.css?v=75c318ea">
+</head>
+<body>
+<header class="topbar"><div style="max-width:1040px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:16px">
+  <a class="brand" href="index.html"><span class="brand-mark">文</span>文语</a>
+  <span style="flex:1"></span><span class="tag beta" style="margin:0">封闭测试中</span>
+</div></header>
+
+<main class="doc">
+  <h1>隐私与数据处理</h1>
+  <p class="meta">适用阶段：封闭测试 · 更新：2026-11-17 · 本文件描述的是当前代码实际行为，不是模板文案</p>
+
+  <div class="notice">本页为展示版的隐私说明。<strong>正式开放前</strong>还需补齐：运营者主体信息、客服与投诉渠道、备案号、数据保留期限的最终确认、以及 AI 生成内容标识的具体方案。在这些补齐之前不会对公众开放上传。</div>
+
+  <h2>1. 我们保存什么</h2>
+  <table>
+    <tr><th>数据</th><th>内容</th><th>保存多久</th></tr>
+    <tr><td>账户</td><td>邮箱、密码的 scrypt 哈希、角色</td><td>账户存续期间；注销后删除</td></tr>
+    <tr><td>文稿</td><td>你上传的原稿文件与解析出的段落文本</td><td>默认 7 天，可随时删除</td></tr>
+    <tr><td>改写候选</td><td>模型返回的候选文本与保真检查结果</td><td>随文稿一起删除</td></tr>
+    <tr><td>审核与导出</td><td>采纳/拒绝记录、导出快照与文件哈希</td><td>随文稿一起删除</td></tr>
+    <tr><td>检测报告</td><td>报告解析出的数值（全篇、三区）、匹配状态</td><td>随文稿一起删除</td></tr>
+    <tr><td>运行日志</td><td>请求编号、错误类型、耗时；<strong>不记录正文、密钥与模型原文</strong></td><td>短期留存用于排障</td></tr>
+  </table>
+
+  <h2>2. 什么会被发送给第三方模型</h2>
+  <ul>
+    <li>只发送<strong>你主动选择生成的那一段</strong>，不发送全文、不发送检测报告、不发送账户信息。</li>
+    <li>首次生成前必须勾选"第三方模型处理告知"，该同意记录会留痕（时间、稿件版本、政策版本）。</li>
+    <li>模型调用走固定的 HTTPS 端点，禁止重定向；失败时不会退回其它供应商。</li>
+  </ul>
+
+  <h2>3. 我们不做什么</h2>
+  <ul>
+    <li>不把你的文稿用于训练，也不把文稿内容写进日志。</li>
+    <li>不把内部特征分包装成第三方检测结果。</li>
+    <li>不在未获授权时把任何真实稿件、报告或截图用于演示、宣传或案例。</li>
+    <li>不向第三方出售或共享你的数据。</li>
+  </ul>
+
+  <h2>4. 你可以怎么删</h2>
+  <ul>
+    <li>在"文稿历史"里删除单篇文稿：段落文本、候选、导出快照会被清空，文件从磁盘移除，并留下删除墓碑用于防止备份复活。</li>
+    <li>删除账户：会话立即失效，内容进入同样的清理流程。</li>
+    <li>到期自动清理：超过保留期限的文稿由后台任务清理，无需你手动操作。</li>
+  </ul>
+
+  <h2>5. AI 生成内容标识</h2>
+  <p>导出文件会在文档属性里记录"本文含经用户审核的 AI 修改建议"（含内容编号与映射段数）；正文声明为可选项，需要时由运营者开启。</p>
+  <p><strong>说明：</strong>自定义元数据不等于符合《人工智能生成合成内容标识办法》的显式/隐式标识要求，相关技术方案仍在按主管部门要求核实与补齐。</p>
+
+  <h2>6. 联系与投诉</h2>
+  <ul>
+    <li>运营者：个人开发者 · 站点 wenyutext.site（备案办理中）</li>
+    <li>客服邮箱：1502697204@qq.com</li>
+    <li>投诉处理时限：待确认（正式开放前承诺并公示具体时限）</li>
+  </ul>
+
+  <p style="margin-top:26px"><a href="index.html">← 返回展示页</a></p>
+</main>
+</body>
+</html>
